@@ -1,0 +1,8 @@
+IOC：控制反转(Inversion of Control)，Spring容器启动时会去扫描包路劲下的类，并实例化该类的对象存入到一个Map中，IOC的作用就是将类的创建工作交给了Spring，
+	不需要调用者去创建，要用到哪个类直接去Map中拿。控制反转的意思就是将对象的实例化工作由调用者反转给了Spring，由Spring统一管理。
+	
+DI：依赖注入。对象之间存在一些依赖关系，比如A对象依赖于B对象，B对象依赖于C对象，按照原来我们的创建方式，我们A a= new A()的同时还得B b= new B(),
+	并且还要做一个赋值操作a.b = b;这样比较麻烦，Spring可以通过注解动态的拿到该对象所依赖的对象，并利用反射将依赖的对象注入进来。我所理解的DI就是赋值。
+
+MVC：Spring容器启动时会扫描带有@Controller的类中带有@RequestMapping注解的方法，将@RequestMapping中的url和方法建立对应关系保存在一个集合中，当请求进入DispatchServlet时，
+	Spring通过解析请求的url，找到url对应的要执行的方法执行。
